@@ -7,6 +7,8 @@
 
     - Login signup page
         - sign up / sign in form
+        - formik library to handle form.
+        - creating manual validations
 
     - Browse (after authentication)
         - Header
@@ -17,4 +19,3 @@
 
     -Netflix GPT 
         - movie suggestion using search bar
-        

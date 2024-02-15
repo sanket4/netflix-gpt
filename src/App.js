@@ -1,11 +1,8 @@
 import "./App.css";
+import Body from "./components/Body";
 
 function App() {
-  return (
-    <div className="m-4 text-xl font-bold text-blue-700">
-      Hello, Lets get started with creating your own NETFLIX APP
-    </div>
-  );
+  return <Body />;
 }
 
 export default App;
