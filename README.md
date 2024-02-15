@@ -2,13 +2,19 @@
 
     - create react app using npx create-react-app
     - setup tailwind --> get started --> setup commands and run
+    - Header
+    - Routing
+    - Login form
+    - sign Up form
+    - form validation
+    - useRef hook
 
 # Features of my App
 
     - Login signup page
         - sign up / sign in form
         - formik library to handle form.
-        - creating manual validations
+        - creating form validations
 
     - Browse (after authentication)
         - Header
@@ -17,5 +23,5 @@
         - Movie suggestions
             - Movie list * N (verticle scroll)
 
-    -Netflix GPT 
+    -Netflix GPT
         - movie suggestion using search bar
