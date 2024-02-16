@@ -46,13 +46,13 @@ const Login = () => {
             photoURL: "https://example.com/jane-q-user/profile.jpg",
           })
             .then(() => {
-              const { uid, email, displayName, photoURL } = user;
+              const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
                   email: email,
-                  displayName: userName.current.value,
-                  photoURL: "https://example.com/jane-q-user/profile.jpg",
+                  displayName: displayName,
+                  photoURL: photoURL,
                 })
               );
               navigate("/browse");
