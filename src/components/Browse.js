@@ -1,21 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "./Header";
-import { APIT_OPTIONS, NOW_PLAYING_MOVIES } from "../utils/constants";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 
 const Browse = () => {
-  const getNowPlayingMovies = async () => {
-    const data = await fetch(NOW_PLAYING_MOVIES, APIT_OPTIONS);
-    const json = await data.json();
-    console.log(json);
-  };
-
-  useEffect(() => {
-    getNowPlayingMovies();
-  }, []);
+  useNowPlayingMovies();
 
   return (
     <div>
       <Header />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
   );
 };

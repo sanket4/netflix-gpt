@@ -6,7 +6,7 @@ export const USER_LOGO =
 
 export const PHOTO_URL = "https://example.com/jane-q-user/profile.jpg";
 
-export const APIT_OPTIONS = {
+export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
@@ -17,3 +17,6 @@ export const APIT_OPTIONS = {
 
 export const NOW_PLAYING_MOVIES =
   "https://api.themoviedb.org/3/movie/now_playing?page=1";
+
+export const MOVIE_TRAILOR_URL1 = "https://api.themoviedb.org/3/movie/";
+export const MOVIE_TRAILOR_URL2 = "/videos?language=en-US";
