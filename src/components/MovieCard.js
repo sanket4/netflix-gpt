@@ -2,7 +2,6 @@ import React from "react";
 import { POSTER_CDN } from "../utils/constants";
 
 const MovieCard = ({ posterPath }) => {
-  console.log(POSTER_CDN + posterPath);
   return (
     <div className="">
       <img
