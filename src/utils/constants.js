@@ -20,3 +20,5 @@ export const NOW_PLAYING_MOVIES =
 
 export const MOVIE_TRAILOR_URL1 = "https://api.themoviedb.org/3/movie/";
 export const MOVIE_TRAILOR_URL2 = "/videos?language=en-US";
+
+export const POSTER_CDN = "https://image.tmdb.org/t/p/w500";
