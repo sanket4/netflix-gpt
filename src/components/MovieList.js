@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ title, movies }) => {
@@ -22,7 +22,25 @@ const MovieList = ({ title, movies }) => {
     }
   };
 
+  useEffect(() => {
+    if (listRef.current) {
+      listRef.current.scrollTo({
+        left: 0,
+        behavior: "auto",
+      });
+    }
+  }, []);
+
   if (!movies) return null;
+  if (movies.length == 0)
+    return (
+      <div className="px-6 ">
+        <h1 className="text-3xl  py-4 text-white">Oops No results found!</h1>
+        <h1 className="text-3xl  py-4 text-white">
+          Try searching with other name
+        </h1>
+      </div>
+    );
   return (
     <div className="px-6 ">
       <h1 className="text-3xl  py-4 text-white">{title}</h1>

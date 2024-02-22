@@ -10,7 +10,7 @@ const GptSearchBar = () => {
 
   const searchMovieInTMDB = async () => {
     const data = await fetch(
-      "https://api.themoviedb.org/3/search/movie?query=" +
+      "https://api.themoviedb.org/3/search/multi?query=" +
         searchText.current.value +
         "&include_adult=false&language=en-US&page=1",
       API_OPTIONS
@@ -21,15 +21,15 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    // const query =
-    //   "Act as a movie recommendation system and suggest some movie names for the query :" +
-    //   searchText.current.value +
-    //   "only give me name of 5 movies, comma separated like the example. Example: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya ";
-    // const searchResults = await openai.chat.completions.create({
-    //   messages: [{ role: "user", content: query }],
-    //   model: "gpt-3.5-turbo",
-    // });
-    // console.log(searchResults.choices);
+    const query =
+      "Act as a movie recommendation system and suggest some movie names for the query :" +
+      searchText.current.value +
+      "only give me name of 5 movies, comma separated like the example. Example: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya ";
+    const searchResults = await openai.chat.completions.create({
+      messages: [{ role: "user", content: query }],
+      model: "gpt-3.5-turbo",
+    });
+    console.log(searchResults.choices);
     searchMovieInTMDB();
   };
 
