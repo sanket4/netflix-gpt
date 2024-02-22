@@ -17,19 +17,25 @@ const GptSearchBar = () => {
     );
     const json = await data.json();
     console.log(json.results);
-    dispatch(addSearchResults(json.results));
+    dispatch(
+      addSearchResults({
+        searchQuery: searchText.current.value,
+        results: json.results,
+      })
+    );
   };
 
   const handleGptSearchClick = async () => {
-    const query =
-      "Act as a movie recommendation system and suggest some movie names for the query :" +
-      searchText.current.value +
-      "only give me name of 5 movies, comma separated like the example. Example: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya ";
-    const searchResults = await openai.chat.completions.create({
-      messages: [{ role: "user", content: query }],
-      model: "gpt-3.5-turbo",
-    });
-    console.log(searchResults.choices);
+    // const query =
+    //   "Act as a movie recommendation system and suggest some movie names for the query :" +
+    //   searchText.current.value +
+    //   "only give me name of 5 movies, comma separated like the example. Example: Gadar, Sholay, Don, Golmaal, Koi Mil Gaya ";
+    // const searchResults = await openai.chat.completions.create({
+    //   messages: [{ role: "user", content: query }],
+    //   model: "gpt-3.5-turbo",
+    // });
+    // console.log(searchResults.choices);
+    if (!searchText.current.value) return null;
     searchMovieInTMDB();
   };
 

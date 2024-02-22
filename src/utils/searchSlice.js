@@ -5,13 +5,16 @@ const searchSlice = createSlice({
   initialState: {
     showGptSearch: false,
     searchResult: null,
+    searchQuery: null,
   },
   reducers: {
     toggleGPTSearchView: (state) => {
       state.showGptSearch = !state.showGptSearch;
     },
     addSearchResults: (state, action) => {
-      state.searchResult = action.payload;
+      const { searchQuery, results } = action.payload;
+      state.searchResult = results;
+      state.searchQuery = searchQuery;
     },
   },
 });

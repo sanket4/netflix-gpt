@@ -23,21 +23,21 @@ const MovieList = ({ title, movies }) => {
   };
 
   useEffect(() => {
+    // Scroll to the start of the list when the component mounts
     if (listRef.current) {
-      listRef.current.scrollTo({
-        left: 0,
-        behavior: "auto",
-      });
+      listRef.current.scrollTo(0, 0);
     }
   }, []);
 
   if (!movies) return null;
-  if (movies.length == 0)
+  if (movies.length === 0)
     return (
       <div className="px-6 ">
-        <h1 className="text-3xl  py-4 text-white">Oops No results found!</h1>
         <h1 className="text-3xl  py-4 text-white">
-          Try searching with other name
+          Oops No results found for "{title}"
+        </h1>
+        <h1 className="text-3xl  py-4 text-white">
+          Try for something else
         </h1>
       </div>
     );

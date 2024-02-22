@@ -8,8 +8,8 @@ const GptSearchResults = () => {
     return null;
   } else {
     return (
-      <div className="p-4 m-10  bg-black">
-        <MovieList title={"Search Results"} movies={results.searchResult} />
+      <div className="p-4 m-10  bg-black opacity-90">
+        <MovieList title={results.searchQuery} movies={results.searchResult} />
       </div>
     );
   }
